@@ -91,7 +91,7 @@ extern UIWindow *mainWindow;
     // 中已 loadSavedBackground/loadUISettings，单例首次访问即完成初始化，无需延迟。
     [[BackgroundManager sharedManager] applyBackgroundToWindow:self.window];
 
-    [self showTranslationNoticeIfNeeded];
+    // [self showTranslationNoticeIfNeeded];
 
     // 启动时自动检查启动器更新（参照 ZL2 LauncherUpgradeViewModel.checkOnAppStart）。
     // 仅当确实存在新版本时才弹窗；请求失败、已是最新、处于限频窗口内一律静默。
@@ -104,7 +104,7 @@ extern UIWindow *mainWindow;
     //   （哨兵 internal.version_isolation_wizard_off 只在用户点该按钮时写；弹出时【不】写哨兵）。
     //   延后一拍 + 可跳过 ⇒ 绝不阻碍启动；用户随时可从实例设置页的「版本隔离向导」入口重新打开。
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self amePresentVersionIsolationWizardIfNeeded];
+       // [self amePresentVersionIsolationWizardIfNeeded];
     });
 
     // ★ [MP-RESTORE] 联机恢复 —— lazy init：启动路径上**不**创建 TerracottaManager /
